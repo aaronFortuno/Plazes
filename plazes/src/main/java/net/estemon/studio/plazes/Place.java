@@ -10,17 +10,25 @@ public class Place {
     private String comment;
     private long date;
     private float score;
+    private PlaceType type;
 
-    public Place(String name, String address, double longitude, double latitude, int phone, String url, String comment, int score) {
+    public Place(String name, String address, double longitude, double latitude, PlaceType type, int phone, String url, String comment, int score) {
         pos = new GeoPoint(longitude, latitude);
         date = System.currentTimeMillis();
         this.name = name;
         this.address = address;
+        this.type = type;
         this.photo = photo;
         this.phone = phone;
         this.url = url;
         this.comment = comment;
         this.score = score;
+    }
+
+    public Place() {
+        date = System.currentTimeMillis();
+        pos = new GeoPoint(0, 0);
+        type = PlaceType.OTHER;
     }
 
     public String getName() {
@@ -45,6 +53,14 @@ public class Place {
 
     public void setPos(GeoPoint pos) {
         this.pos = pos;
+    }
+
+    public PlaceType getType() {
+        return type;
+    }
+
+    public void setType(PlaceType type) {
+        this.type = type;
     }
 
     public String getPhoto() {
@@ -107,6 +123,7 @@ public class Place {
                 ", comment='" + comment + '\'' +
                 ", date=" + date +
                 ", score=" + score +
+                ", type=" + type +
                 '}';
     }
 }
