@@ -1,6 +1,7 @@
 package net.estemon.studio.plazes;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -35,10 +36,6 @@ public class PlaceViewActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.place_view_toolbar);
         toolbar.setTitle(place.getName());
         setSupportActionBar(toolbar);
-
-        // Initialize elements and place its values
-        //TextView name = findViewById(R.id.view_name);
-        //name.setText(place.getName());
 
         ImageView type_logo = findViewById(R.id.logo_type);
         type_logo.setImageResource(place.getType().getResource());
@@ -96,12 +93,20 @@ public class PlaceViewActivity extends AppCompatActivity {
         } else if (item.getItemId() == R.id.place_menu_navigate) {
             return true;
         } else if (item.getItemId() == R.id.place_menu_edit) {
+            startPlaceEditActivity(id);
             return true;
         } else if (item.getItemId() == R.id.place_menu_delete) {
             confirmDelete((int) id);
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void startPlaceEditActivity(long id) {
+        long edit_id = Long.parseLong(String.valueOf(id));
+        Intent intent = new Intent(PlaceViewActivity.this, PlaceEditActivity.class);
+        intent.putExtra("id", id);
+        startActivity(intent);
     }
 
     public void confirmDelete(final int id) {
