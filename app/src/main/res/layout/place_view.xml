@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="32dp" >
+
+        <TextView
+            android:id="@+id/nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="Place name"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <LinearLayout style="@style/place_view_linear_layout">
+            <ImageView
+                android:id="@+id/logo_type"
+                android:src="@drawable/ic_type"
+                style="@style/place_view_logo_element" />
+
+            <TextView
+                android:id="@+id/view_type"
+                android:text="Place type"
+                style="@style/place_view_text_element" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/place_view_linear_layout">
+            <ImageView
+                android:id="@+id/logo_address"
+                style="@style/place_view_logo_element"
+                android:src="@drawable/ic_address" />
+
+            <TextView
+                android:id="@+id/view_address"
+                style="@style/place_view_text_element"
+                android:text="Address" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/place_view_linear_layout">
+            <ImageView
+                android:id="@+id/logo_phone"
+                style="@style/place_view_logo_element"
+                android:src="@drawable/ic_phone" />
+
+            <TextView
+                android:id="@+id/view_phone"
+                style="@style/place_view_text_element"
+                android:text="Phone" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/place_view_linear_layout">
+            <ImageView
+                android:id="@+id/logo_url"
+                style="@style/place_view_logo_element"
+                android:src="@drawable/ic_url" />
+
+            <TextView
+                android:id="@+id/view_url"
+                style="@style/place_view_text_element"
+                android:text="URL" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/place_view_linear_layout">
+            <ImageView
+                android:id="@+id/logo_notes"
+                style="@style/place_view_logo_element"
+                android:src="@drawable/ic_notes" />
+
+            <TextView
+                android:id="@+id/view_notes"
+                style="@style/place_view_text_element"
+                android:text="Useful info" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/place_view_linear_layout">
+            <ImageView
+                android:id="@+id/logo_date"
+                style="@style/place_view_logo_element"
+                android:src="@drawable/ic_date" />
+
+            <TextView
+                android:id="@+id/view_date"
+                style="@style/place_view_text_element"
+                android:text="Visited on" />
+        </LinearLayout>
+
+        <RatingBar
+            android:id="@+id/valoracion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:rating="3"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/foto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="fotografía"
+                android:src="@mipmap/ic_launcher" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/camara"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:contentDescription="logo cámara"
+                    android:src="@android:drawable/ic_menu_camera" />
+
+                <ImageView
+                    android:id="@+id/galeria"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:contentDescription="logo galería"
+                    android:src="@android:drawable/ic_menu_gallery" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+</ScrollView>
