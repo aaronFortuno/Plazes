@@ -19,16 +19,21 @@ public class MainActivity extends AppCompatActivity {
 
         AboutActivity aboutActivity = new AboutActivity();
         Button about = findViewById(R.id.btn_about);
-        about.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startAppActivity(aboutActivity);
-            }
-        });
+        about.setOnClickListener(view -> startAboutActivity());
+
+        PlaceViewActivity placeViewActivity = new PlaceViewActivity();
+        Button view_place = findViewById(R.id.btn_show_places);
+        view_place.setOnClickListener(view -> startPlaceViewActivity());
     }
 
-    public void startAppActivity(Activity activity) {
-        Intent intent = new Intent(this, activity.getClass());
+    public void startAboutActivity() {
+        Intent intent = new Intent(this, AboutActivity.class);
+        startActivity(intent);
+    }
+
+     public void startPlaceViewActivity() {
+        Intent intent = new Intent(this, PlaceViewActivity.class);
+        intent.putExtra("id", (long) 0);
         startActivity(intent);
     }
 }

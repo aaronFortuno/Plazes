@@ -40,7 +40,7 @@ public class PlaceViewActivity extends AppCompatActivity {
         address.setText(place.getAddress());
 
         TextView phone = findViewById(R.id.view_phone);
-        phone.setText(place.getPhone());
+        phone.setText(Integer.toString(place.getPhone()));
 
         TextView url = findViewById(R.id.view_url);
         url.setText(place.getUrl());

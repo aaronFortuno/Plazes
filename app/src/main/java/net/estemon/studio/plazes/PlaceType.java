@@ -2,17 +2,17 @@ package net.estemon.studio.plazes;
 
 public enum PlaceType {
 
-    OTHER ("Other", 5),
-    RESTAURANT ("Restaurant", 2),
-    BAR ("Bar", 6),
-    DRINKING ("Drinking", 0),
-    SHOW ("Show", 0),
-    HOTEL ("Hotel", 0),
-    SHOPPING ("Shopping", 0),
-    EDUCATION ("Education", 0),
-    SPORTS ("Sports", 0),
-    NATURE ("Nature", 0),
-    GAS_STATION ("Gas station", 0);
+    OTHER ("Other", R.drawable.ic_other),
+    RESTAURANT ("Restaurant", R.drawable.ic_restaurant),
+    BAR ("Bar", R.drawable.ic_bar),
+    DRINKING ("Drinking", R.drawable.ic_drinking),
+    SHOW ("Show", R.drawable.ic_show),
+    HOTEL ("Hotel", R.drawable.ic_hotel),
+    SHOPPING ("Shopping", R.drawable.ic_shopping),
+    EDUCATION ("Education", R.drawable.ic_education),
+    SPORTS ("Sports", R.drawable.ic_sports),
+    NATURE ("Nature", R.drawable.ic_nature),
+    GAS_STATION ("Gas station", R.drawable.ic_gas_station);
 
     private final String text;
     private final int resource;
