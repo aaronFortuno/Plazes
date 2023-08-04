@@ -7,12 +7,12 @@ public class Place {
     private String photo;
     private int phone;
     private String url;
-    private String comment;
+    private String notes;
     private long date;
-    private float score;
+    private float rating;
     private PlaceType type;
 
-    public Place(String name, String address, double longitude, double latitude, PlaceType type, int phone, String url, String comment, int score) {
+    public Place(String name, String address, double longitude, double latitude, PlaceType type, int phone, String url, String notes, int rating) {
         pos = new GeoPoint(longitude, latitude);
         date = System.currentTimeMillis();
         this.name = name;
@@ -21,8 +21,8 @@ public class Place {
         this.photo = photo;
         this.phone = phone;
         this.url = url;
-        this.comment = comment;
-        this.score = score;
+        this.notes = notes;
+        this.rating = rating;
     }
 
     public Place() {
@@ -87,12 +87,12 @@ public class Place {
         this.url = url;
     }
 
-    public String getComment() {
-        return comment;
+    public String getNotes() {
+        return notes;
     }
 
-    public void setComment(String comment) {
-        this.comment = comment;
+    public void setNotes(String notes) {
+        this.notes = notes;
     }
 
     public long getDate() {
@@ -103,12 +103,12 @@ public class Place {
         this.date = date;
     }
 
-    public float getScore() {
-        return score;
+    public float getRating() {
+        return rating;
     }
 
-    public void setScore(float score) {
-        this.score = score;
+    public void setRating(float rating) {
+        this.rating = rating;
     }
 
     @Override
@@ -120,9 +120,9 @@ public class Place {
                 ", photo='" + photo + '\'' +
                 ", phone=" + phone +
                 ", url='" + url + '\'' +
-                ", comment='" + comment + '\'' +
+                ", comment='" + notes + '\'' +
                 ", date=" + date +
-                ", score=" + score +
+                ", score=" + rating +
                 ", type=" + type +
                 '}';
     }

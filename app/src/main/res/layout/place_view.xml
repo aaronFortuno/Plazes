@@ -10,12 +10,13 @@
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/nombre"
+            android:id="@+id/view_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:gravity="center"
             android:text="Place name"
+            android:padding="32dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
         <LinearLayout style="@style/place_view_linear_layout">
@@ -91,7 +92,7 @@
         </LinearLayout>
 
         <RatingBar
-            android:id="@+id/valoracion"
+            android:id="@+id/view_rating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
