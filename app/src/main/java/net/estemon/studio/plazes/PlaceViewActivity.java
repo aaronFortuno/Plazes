@@ -1,10 +1,14 @@
 package net.estemon.studio.plazes;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.DateFormat;
@@ -40,13 +44,28 @@ public class PlaceViewActivity extends AppCompatActivity {
         address.setText(place.getAddress());
 
         TextView phone = findViewById(R.id.view_phone);
-        phone.setText(Integer.toString(place.getPhone()));
+        if (place.getPhone() == 0) {
+            phone.setVisibility(View.GONE);
+        } else {
+            phone.setVisibility(View.VISIBLE);
+            phone.setText(Integer.toString(place.getPhone()));
+        }
 
         TextView url = findViewById(R.id.view_url);
-        url.setText(place.getUrl());
+        if (place.getUrl().isEmpty()) {
+            url.setVisibility(View.GONE);
+        } else {
+            url.setVisibility(View.VISIBLE);
+            url.setText(place.getUrl());
+        }
 
         TextView notes = findViewById(R.id.view_notes);
-        notes.setText(place.getNotes());
+        if (place.getNotes().isEmpty()) {
+            notes.setVisibility(View.GONE);
+        } else {
+            notes.setVisibility(View.VISIBLE);
+            notes.setText(place.getNotes());
+        }
 
         TextView date = findViewById(R.id.view_date);
         date.setText(DateFormat.getDateInstance().format(
@@ -56,5 +75,27 @@ public class PlaceViewActivity extends AppCompatActivity {
         RatingBar rating = findViewById(R.id.view_rating);
         rating.setRating(place.getRating());
         rating.setOnRatingBarChangeListener((ratingBar, v, b) -> place.setRating(v));
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.place_view_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.place_menu_share) {
+            return true;
+        } else if (item.getItemId() == R.id.place_menu_navigate) {
+            return  true;
+        } else if (item.getItemId() == R.id.place_menu_edit) {
+            return true;
+        } else if (item.getItemId() == R.id.place_menu_delete) {
+            MainActivity.places.deletePlace((int) id);
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
