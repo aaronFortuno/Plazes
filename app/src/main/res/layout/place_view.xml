@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/scrollView1"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -7,31 +8,43 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
-        <TextView
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/place_view_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Plazes"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        <!--<TextView
             android:id="@+id/view_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:gravity="center"
-            android:text="Place name"
             android:padding="32dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:text="Place name"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />-->
 
         <LinearLayout style="@style/place_view_linear_layout">
+
             <ImageView
                 android:id="@+id/logo_type"
-                android:src="@drawable/ic_type"
-                style="@style/place_view_logo_element" />
+                style="@style/place_view_logo_element"
+                android:src="@drawable/ic_type" />
 
             <TextView
                 android:id="@+id/view_type"
-                android:text="Place type"
-                style="@style/place_view_text_element" />
+                style="@style/place_view_text_element"
+                android:text="Place type" />
         </LinearLayout>
 
         <LinearLayout style="@style/place_view_linear_layout">
+
             <ImageView
                 android:id="@+id/logo_address"
                 style="@style/place_view_logo_element"
@@ -44,6 +57,7 @@
         </LinearLayout>
 
         <LinearLayout style="@style/place_view_linear_layout">
+
             <ImageView
                 android:id="@+id/logo_phone"
                 style="@style/place_view_logo_element"
@@ -56,6 +70,7 @@
         </LinearLayout>
 
         <LinearLayout style="@style/place_view_linear_layout">
+
             <ImageView
                 android:id="@+id/logo_url"
                 style="@style/place_view_logo_element"
@@ -68,6 +83,7 @@
         </LinearLayout>
 
         <LinearLayout style="@style/place_view_linear_layout">
+
             <ImageView
                 android:id="@+id/logo_notes"
                 style="@style/place_view_logo_element"
@@ -80,6 +96,7 @@
         </LinearLayout>
 
         <LinearLayout style="@style/place_view_linear_layout">
+
             <ImageView
                 android:id="@+id/logo_date"
                 style="@style/place_view_logo_element"
@@ -96,9 +113,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:rating="3"
             android:paddingTop="16dp"
-            android:paddingBottom="16dp" />
+            android:paddingBottom="16dp"
+            android:rating="3" />
 
         <FrameLayout
             android:layout_width="match_parent"
