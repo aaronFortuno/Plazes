@@ -23,7 +23,6 @@
             android:textSize="34sp" />
 
         <TextView
-            android:id="@+id/drawer_text_subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/drawer_text_title"

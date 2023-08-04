@@ -7,11 +7,4 @@
 
     <style name="Theme.Plazes" parent="Base.Theme.Plazes" />
 
-    <style name="Theme.Plazes.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="Theme.Plazes.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-    <style name="Theme.Plazes.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
 </resources>
