@@ -22,6 +22,14 @@ public enum PlaceType {
         this.resource = resource;
     }
 
+    public static String[] getNames() {
+        String[] result = new String[PlaceType.values().length];
+        for (PlaceType type : PlaceType.values()) {
+            result[type.ordinal()] = type.text;
+        }
+        return result;
+    }
+
     public String getText() { return text; }
     public int getResource() { return resource; }
 }

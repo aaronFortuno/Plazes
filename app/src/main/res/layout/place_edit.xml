@@ -45,7 +45,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tag_title" />
 
         <Spinner
-            android:id="@+id/type_spinner"
+            android:id="@+id/in_type_spinner"
             android:layout_width="match_parent"
             android:layout_height="32dp"
             android:layout_marginStart="16dp"
@@ -76,7 +76,7 @@
             android:inputType="text|textPostalAddress|textMultiLine"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tag_address"
-            app:layout_constraintTop_toBottomOf="@+id/type_spinner" />
+            app:layout_constraintTop_toBottomOf="@+id/in_type_spinner" />
 
         <TextView
             android:id="@+id/tag_phone"

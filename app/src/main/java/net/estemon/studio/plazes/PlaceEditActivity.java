@@ -1,18 +1,11 @@
 package net.estemon.studio.plazes;
 
 import android.os.Bundle;
-import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.RatingBar;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-import java.text.DateFormat;
-import java.util.Date;
 
 public class PlaceEditActivity extends AppCompatActivity {
 
@@ -40,6 +33,15 @@ public class PlaceEditActivity extends AppCompatActivity {
         // Initialize elements and place its values
         name = findViewById(R.id.in_text_name);
         name.setText(place.getName());
+
+        type = findViewById(R.id.in_type_spinner);
+        ArrayAdapter adapter = new ArrayAdapter(
+                this,
+                android.R.layout.simple_spinner_item,
+                PlaceType.getNames());
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        type.setAdapter(adapter);
+        type.setSelection(place.getType().ordinal());
 
         address = findViewById(R.id.in_text_address);
         address.setText(place.getAddress());
