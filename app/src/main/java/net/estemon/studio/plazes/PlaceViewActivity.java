@@ -11,6 +11,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -21,6 +22,7 @@ public class PlaceViewActivity extends AppCompatActivity {
 
     private long id;
     private Place place;
+    final static int EDIT_RESULT = 1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,11 @@ public class PlaceViewActivity extends AppCompatActivity {
 
         assert extras != null;
         id = extras.getLong("id", -1);
+
+        updateViews();
+    }
+
+    public void updateViews() {
         place = MainActivity.places.place((int) id);
 
         Toolbar toolbar = findViewById(R.id.place_view_toolbar);
@@ -106,7 +113,16 @@ public class PlaceViewActivity extends AppCompatActivity {
         long edit_id = Long.parseLong(String.valueOf(id));
         Intent intent = new Intent(PlaceViewActivity.this, PlaceEditActivity.class);
         intent.putExtra("id", id);
-        startActivity(intent);
+        startActivityForResult(intent, EDIT_RESULT);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == EDIT_RESULT) {
+            updateViews();
+            findViewById(R.id.scrollView1).invalidate();
+        }
     }
 
     public void confirmDelete(final int id) {
@@ -122,4 +138,5 @@ public class PlaceViewActivity extends AppCompatActivity {
                 .setNegativeButton("CANCEL", null)
                 .show();
     }
+
 }
