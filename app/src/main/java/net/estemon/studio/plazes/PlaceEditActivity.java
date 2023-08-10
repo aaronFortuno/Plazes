@@ -1,10 +1,13 @@
 package net.estemon.studio.plazes;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class PlaceEditActivity extends AppCompatActivity {
@@ -56,4 +59,26 @@ public class PlaceEditActivity extends AppCompatActivity {
         notes.setText(place.getNotes());
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.place_edit_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.edit_menu_cancel) {
+            finish();
+        } else if (item.getItemId() == R.id.edit_menu_save) {
+            place.setName(name.getText().toString());
+            place.setType(PlaceType.values()[type.getSelectedItemPosition()]);
+            place.setAddress(address.getText().toString());
+            place.setPhone(Integer.parseInt(phone.getText().toString()));
+            place.setUrl(url.getText().toString());
+            place.setNotes(notes.getText().toString());
+            MainActivity.places.updatePlace((int) id, place);
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

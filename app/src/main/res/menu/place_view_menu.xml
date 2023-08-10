@@ -3,35 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/place_menu_share"
+        android:id="@+id/view_menu_share"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orderInCategory="10"
-        app:showAsAction="ifRoom"
         android:icon="@drawable/ic_place_share"
-        android:title="Share" />
+        android:orderInCategory="10"
+        android:title="Share"
+        app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/place_menu_navigate"
+        android:id="@+id/view_menu_navigate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orderInCategory="20"
-        app:showAsAction="ifRoom"
         android:icon="@drawable/ic_place_navigation"
-        android:title="Navigate" />
+        android:orderInCategory="20"
+        android:title="Navigate"
+        app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/place_menu_edit"
+        android:id="@+id/view_menu_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orderInCategory="30"
-        app:showAsAction="ifRoom"
         android:icon="@drawable/ic_place_edit"
-        android:title="Edit" />
+        android:orderInCategory="30"
+        android:title="Edit"
+        app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/place_menu_delete"
+        android:id="@+id/view_menu_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orderInCategory="40"
-        app:showAsAction="ifRoom"
         android:icon="@drawable/ic_place_delete"
-        android:title="Delete" />
+        android:orderInCategory="40"
+        android:title="Delete"
+        app:showAsAction="ifRoom" />
 </menu>

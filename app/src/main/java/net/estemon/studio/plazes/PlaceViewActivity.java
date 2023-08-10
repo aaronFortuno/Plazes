@@ -88,14 +88,14 @@ public class PlaceViewActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.place_menu_share) {
+        if (item.getItemId() == R.id.view_menu_share) {
             return true;
-        } else if (item.getItemId() == R.id.place_menu_navigate) {
+        } else if (item.getItemId() == R.id.view_menu_navigate) {
             return true;
-        } else if (item.getItemId() == R.id.place_menu_edit) {
+        } else if (item.getItemId() == R.id.view_menu_edit) {
             startPlaceEditActivity(id);
             return true;
-        } else if (item.getItemId() == R.id.place_menu_delete) {
+        } else if (item.getItemId() == R.id.view_menu_delete) {
             confirmDelete((int) id);
             return true;
         }
